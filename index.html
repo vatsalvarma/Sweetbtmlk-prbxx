@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -494,146 +495,225 @@
           }
         }
 
-        /* ================= MOBILE ================= */
+            /* =============================
+   HAMBURGER MENU
+============================= */
 
-        @media(max-width: 900px){
-          .hero {
-            flex-direction: column;
-            text-align: center;
-            min-height: auto;
-          }
+.hamburger{
+    display:none;
+    font-size:24px;
+    cursor:pointer;
+}
 
-          .hero-left,
-          .hero-right {
-            width: 100%;
-          }
+/* MOBILE MENU */
 
-          .ingredients {
-            justify-content: center;
-          }
-        }
+.mobile-menu{
+    position:fixed;
+    top:90px;
+    left:50%;
+    transform:translateX(-50%);
 
-        /* ================= PRINT ================= */
+    width:90%;
+    padding:25px;
 
-        @media print {
+    border-radius:30px;
 
-          body {
-            background: none !important;
-          }
+    backdrop-filter:blur(15px);
+    background:rgba(255,255,255,0.25);
+    border:1px solid rgba(255,255,255,0.4);
 
-          .container {
-            width: 1100px !important;
-            margin: 0 auto !important;
-          }
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    text-align:center;
 
-          .hero {
-            flex-direction: row !important;
-            min-height: auto;
-          }
+    z-index:200;
 
-          .hero-left,
-          .hero-right {
-            width: 50% !important;
-          }
+    opacity:0;
+    pointer-events:none;
+    transition:0.3s;
+}
 
-          .header {
-            position: relative !important;
-          }
-        }
+.mobile-menu a{
+    text-decoration:none;
+    color:#000;
+    font-weight:600;
+}
 
-        @page {
-          size: A4;
-          margin: 0;
-        }
-        @media (max-width: 768px) {
+.mobile-menu.active{
+    opacity:1;
+    pointer-events:auto;
+}
 
-          .hero {
-            flex-direction: column;
-            text-align: center;
-            min-height: auto;
-            padding: 40px 0;
-              transform: translateX(-5px); /* adjust 10–40px as needed */
-          }
+  /* ================= MOBILE ================= */
 
-          .hero-left,
-          .hero-right {
-            width: 100%;
-          }
+  @media(max-width: 900px){
+    .hero {
+      flex-direction: column;
+      text-align: center;
+      min-height: auto;
+    }
 
-          .hero-left {
-            justify-content: center;
-            padding-right: 0;
-            margin-bottom: 20px;
-          }
+    .hero-left,
+    .hero-right {
+      width: 100%;
+    }
 
-          .bottle {
-            max-width: 260px;
-          }
+    .ingredients {
+      justify-content: center;
+    }
+  }
 
-          h1 {
-            font-size: 34px;
-          }
+  /* ================= PRINT ================= */
 
-          .tagline {
-            font-size: 16px;
-          }
+  @media print {
 
-          .ingredients {
-            justify-content: center;
-            gap: 18px;
-          }
+    body {
+      background: none !important;
+    }
 
-          .two-column {
-            grid-template-columns: 1fr;
-          }
+    .container {
+      width: 1100px !important;
+      margin: 0 auto !important;
+    }
 
-          .center-cards {
-            flex-direction: column;
-            align-items: center;
-          }
+    .hero {
+      flex-direction: row !important;
+      min-height: auto;
+    }
 
-          .footer-cols {
-            flex-direction: column;
-            text-align: center;
-          }
-        }
-        @media (min-width: 769px) and (max-width: 1024px) {
+    .hero-left,
+    .hero-right {
+      width: 50% !important;
+    }
 
-          .hero {
-            padding: 40px 0;
-            gap: 30px;
-          }
+    .header {
+      position: relative !important;
+    }
+  }
 
-          .bottle {
-            max-width: 280px;
-          }
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  @media (max-width: 768px) {
 
-          h1 {
-            font-size: 40px;
-          }
+   .nav-links{
+    display:none;
+}
 
-          .ingredients {
-            gap: 20px;
-          }
+.hamburger{
+    display:block;
+}
 
-          .two-column {
-            grid-template-columns: repeat(2,1fr);
-          }
-        }
-        @media (min-width: 1400px) {
+    .hero {
+      flex-direction: column;
+      text-align: center;
+      min-height: auto;
+      padding: 40px 0;
+       transform: translateX(-2px); /* adjust 10–40px as needed */
+    }
 
-          .container {
-            max-width: 1200px;
-          }
+    .hero-left,
+    .hero-right {
+      width: 100%;
+    }
 
-          .bottle {
-            max-width: 350px;
-          }
+    .hero-left {
+      justify-content: center;
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
 
-          h1 {
-            font-size: 52px;
-          }
-        }
+    .bottle {
+      max-width: 260px;
+    }
+
+    h1 {
+      font-size: 34px;
+    }
+
+    .tagline {
+      font-size: 16px;
+    }
+
+    .ingredients {
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .two-column {
+      grid-template-columns: 1fr;
+    }
+
+    .center-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-cols {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+
+    .hero {
+      padding: 40px 0;
+      gap: 30px;
+    }
+
+    .bottle {
+      max-width: 280px;
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    .ingredients {
+      gap: 20px;
+    }
+
+    .two-column {
+      grid-template-columns: repeat(2,1fr);
+    }
+  }
+  @media (min-width: 1400px) {
+
+    .container {
+      max-width: 1200px;
+    }
+
+    .bottle {
+      max-width: 350px;
+    }
+
+    h1 {
+      font-size: 52px;
+    }
+  }
+
+        .mobile-dropdown-title{
+    font-weight:600;
+    cursor:pointer;
+}
+
+.mobile-dropdown-links{
+    display:none;
+    flex-direction:column;
+    margin-top:8px;
+    gap:10px;
+}
+
+.mobile-dropdown-links a{
+    font-size:14px;
+    opacity:0.8;
+}
+
+.mobile-dropdown-links.active{
+    display:flex;
+}
 
 
     </style>
@@ -646,6 +726,10 @@
     <div class="logo">
         <img src="https://i.ibb.co/cSXcmScQ/Shake-Gulp-Logo.png">
         SHAKE & GULP
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        ☰
     </div>
 
     <div class="nav-links">
@@ -661,12 +745,11 @@
                 <a href="https://vatsalvarma.github.io/Masala-btmlk-prbxx/">Masala Buttermilk</a>
                 <a href="https://vatsalvarma.github.io/Dates-prbxx/">Date Buttermilk</a>
                 <a href="https://vatsalvarma.github.io/ragibrml-prbxxx/">Ragi Buttermilk</a>
-
                 <a href="https://vatsalvarma.github.io/Sabjalass-prbxs/">Sabja Lassi</a>
                 <a href="https://vatsalvarma.github.io/Sweetbtmlk-prbxx/">Buttermilk</a>
                 <a href="https://vatsalvarma.github.io/Nmpsabja/">Nimbu Sabja</a>
                 <a href="https://vatsalvarma.github.io/Nimpud-prbxx/">Nimbu Pudina</a>
-            
+
             </div>
         </div>
 
@@ -682,7 +765,7 @@
                 <a href="https://vatsalvarma.github.io/Moringa-prbxx/">Moringa Shot</a>
                 <a href="https://vatsalvarma.github.io/wheatgrass-prbxxx/">Wheatgrass Shot</a>
                 <a href="https://vatsalvarma.github.io/Barley-prbxx/">Barley Drink</a>
-            
+
             </div>
         </div>
 
@@ -692,6 +775,58 @@
     </div>
 
 </div>
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="https://vatsalvarma.github.io/SHAKE-GULP/" onclick="toggleMenu()">Home</a>
+
+    <!-- TRADITIONAL DROPDOWN -->
+    <div class="mobile-dropdown">
+        <div class="mobile-dropdown-title" onclick="toggleMobileDropdown('traditionalList')">
+            Traditional Drinks ⮋
+        </div>
+
+        <div class="mobile-dropdown-links" id="traditionalList">
+
+            <a href="https://vatsalvarma.github.io/Jeerabtmlk-prbxx/">Jeera Buttermilk</a>
+            <a href="https://vatsalvarma.github.io/Masala-btmlk-prbxx/">Masala Buttermilk</a>
+            <a href="https://vatsalvarma.github.io/Dates-prbxx/">Date Buttermilk</a>
+            <a href="https://vatsalvarma.github.io/ragibrml-prbxxx/">Ragi Buttermilk</a>
+            <a href="https://vatsalvarma.github.io/Sabjalass-prbxs/">Sabja Lassi</a>
+            <a href="https://vatsalvarma.github.io/Sweetbtmlk-prbxx/">Buttermilk</a>
+            <a href="https://vatsalvarma.github.io/Nmpsabja/">Nimbu Sabja</a>
+            <a href="https://vatsalvarma.github.io/Nimpud-prbxx/">Nimbu Pudina</a>
+
+        </div>
+    </div>
+
+
+    <!-- WELLNESS DROPDOWN -->
+    <div class="mobile-dropdown">
+
+        <div class="mobile-dropdown-title" onclick="toggleMobileDropdown('wellnessList')">
+            Wellness Drinks ⮋
+        </div>
+
+        <div class="mobile-dropdown-links" id="wellnessList">
+
+            <a href="https://vatsalvarma.github.io/Ginger-prbxx/">Ginger Shot</a>
+            <a href="https://vatsalvarma.github.io/GingTer-prbxx/">Ginger Turmeric</a>
+            <a href="https://vatsalvarma.github.io/Amla-prbrxx/">Amla Shot</a>
+            <a href="https://vatsalvarma.github.io/Neem-prbxx/">Neem Shot</a>
+            <a href="https://vatsalvarma.github.io/Moringa-prbxx/">Moringa Shot</a>
+            <a href="https://vatsalvarma.github.io/wheatgrass-prbxxx/">Wheatgrass Shot</a>
+            <a href="https://vatsalvarma.github.io/Barley-prbxx/">Barley Drink</a>
+
+        </div>
+
+    </div>
+
+    <a href="https://vatsalvarma.github.io/SHAKE-GULP/#read" onclick="toggleMenu()">Read</a>
+    <a href="https://vatsalvarma.github.io/SHAKE-GULP/#" onclick="openContact();toggleMenu()">Contact</a>
+
+</div>
+
 
 <div class="nav-blur"></div>
 
@@ -806,7 +941,7 @@
 
         </div>
 
-
+    </div>
 
 </section>
 
@@ -857,6 +992,27 @@
         © Shake & Gulp — Shake Well. Gulp Fresh.
     </p>
 </footer>
+
+
+<script>
+
+    function toggleMenu(){
+
+        const menu = document.getElementById("mobileMenu");
+
+        menu.classList.toggle("active");
+
+    }
+
+    function toggleMobileDropdown(id){
+
+    const menu = document.getElementById(id);
+
+    menu.classList.toggle("active");
+
+}
+
+</script>
 
 </body>
 </html>
